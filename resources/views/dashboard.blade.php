@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Welcome {{ Auth::user()->name }} <br>
-                    {{ __("You're logged in!") }}
+                    Welcome, {{ Auth::user()->name }} !<br>
+                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to View, Edit and Delete user accounts.</p>
                 </div>
             </div>
         </div>
