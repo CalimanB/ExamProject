@@ -34,9 +34,9 @@ Route::get('/subscriber', function () {
     return view('subscriber');
 })->middleware(['auth', 'verified'])->name('subscriber');
 
-Route::get('/report', function () {
-    return view('report');
-})->middleware(['auth', 'verified'])->name('report');
+Route::get('/inventory', function () {
+    return view('inventory');
+})->middleware(['auth', 'verified'])->name('inventory');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
