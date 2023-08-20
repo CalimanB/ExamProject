@@ -13,6 +13,5 @@ class Subscriber extends Model
         'subscriber_name',
         'email_address',
         'phone_number',
-        'book_id',
     ];
 }

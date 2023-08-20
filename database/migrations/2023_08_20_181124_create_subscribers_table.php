@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->string('subscriber_name');
-            $table->string('email_address');
-            $table->integer('phone_number');
-            $table->integer('book_id');
+            $table->string('subscriber_name')->nullable();
+            $table->string('email_address')->nullable();
+            $table->integer('phone_number')->nullable();
+            $table->foreignId('book_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }
