@@ -47,6 +47,7 @@ Route::get('/subscriber', [SubscriberController::class,'index'])->middleware(['a
 Route::get('/subscriber/create', [SubscriberController::class,'create'])->middleware(['auth', 'verified'])->name('subscriber.create');
 Route::post('/subscriber', [SubscriberController::class,'store'])->middleware(['auth', 'verified'])->name('subscriber.store');
 Route::get('/subscriber/{subscriber}/edit', [SubscriberController::class,'edit'])->middleware(['auth', 'verified'])->name('subscriber.edit');
+Route::put('/subscriber/{subscriber}/update', [SubscriberController::class,'update'])->middleware(['auth', 'verified'])->name('subscriber.update');
 Route::delete('/subscriber/{subscriber}/destroy', [SubscriberController::class,'destroy'])->middleware(['auth', 'verified'])->name('subscriber.destroy');
 
 Route::get('/inventory', function () {
