@@ -17,22 +17,22 @@
                         @method ('post')
                         <div>
                             <label>Author</label>
-                            <input type="text" name="author" placeholder="Author">
+                            <input type="text" name="author" placeholder="Author" class="text-purple-700 text-opacity-100">
                         </div>
                         <div>
                             <label>Book Title</label>
-                            <input type="text" name="title" placeholder="Title">
+                            <input type="text" name="title" placeholder="Title" class="text-purple-700 text-opacity-100">
                         </div>
                         <div>
                             <label>Number of Pages</label>
-                            <input type="text" name="page_num" placeholder="Pages">
+                            <input type="text" name="page_num" placeholder="Pages" class="text-purple-700 text-opacity-100">
                         </div>
                         <div>
                             <label>Year of Publishing</label>
-                            <input type="text" name="year_published" placeholder="Published">
+                            <input type="text" name="year_published" placeholder="Published" class="text-purple-700 text-opacity-100">
                         </div>
                         <div>
-                            <input type="submit" value="Add a New Book">
+                            <input type="submit" value="Add a New Book" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                         </div>
                     </form>
                 </div>

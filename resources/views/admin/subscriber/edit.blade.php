@@ -28,7 +28,7 @@
                             <input type="text" name="phone_number" placeholder="Phone" value="{{$subscriber->phone_number}}">
                         </div>
                         <div>
-                            <input type="submit" value="Update Subscriber">
+                            <input type="submit" value="Update Subscriber" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                         </div>
                     </form>
                 </div>

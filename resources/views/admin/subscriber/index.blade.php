@@ -22,7 +22,7 @@
                     <a href="{{route('subscriber.create')}}">Add a new subscriber</a>
                 </div>
                     <div>
-                    <table class="table-auto">
+                    <table>
                     <tr>
                         <th>ID</th>
                         <th>Subscriber Name</th>
@@ -42,7 +42,7 @@
                             <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
                                 @csrf
                                 @method('delete')
-                                <input type="submit" value="Delete">
+                                <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                             </form>
                         </td>
                         </tr>
