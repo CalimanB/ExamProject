@@ -11,28 +11,28 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     Welcome, {{ Auth::user()->name }} !<br>
                     <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to CREATE A BOOK.</p>
-                    <h1>Add a new book</h1>
-                    <form method="post" action="{{route('book.store')}}">
+                    <h1>Edit a book</h1>
+                    <form method="post" action="{{route('book.update', ['book'=> $book])}}">
                         @csrf
-                        @method ('post')
+                        @method ('put')
                         <div>
                             <label>Author</label>
-                            <input type="text" name="author" placeholder="Author">
+                            <input type="text" name="author" placeholder="Author" value="{{$book->author}}">
                         </div>
                         <div>
                             <label>Book Title</label>
-                            <input type="text" name="title" placeholder="Title">
+                            <input type="text" name="title" placeholder="Title" value="{{$book->title}}">
                         </div>
                         <div>
                             <label>Number of Pages</label>
-                            <input type="text" name="page_num" placeholder="Pages">
+                            <input type="text" name="page_num" placeholder="Pages" value="{{$book->page_num}}">
                         </div>
                         <div>
                             <label>Year of Publishing</label>
-                            <input type="text" name="year_published" placeholder="Published">
+                            <input type="text" name="year_published" placeholder="Published" value="{{$book->year_published}}">
                         </div>
                         <div>
-                            <input type="submit" value="Add a New Book">
+                            <input type="submit" value="Update Book">
                         </div>
                     </form>
                 </div>

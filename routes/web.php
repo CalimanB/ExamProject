@@ -35,6 +35,8 @@ Route::get('/dashboard', function () {
 Route::get('/book', [BookController::class,'index'])->middleware(['auth', 'verified'])->name('book');
 Route::get('/book/create', [BookController::class,'create'])->middleware(['auth', 'verified'])->name('book.create');
 Route::post('/book', [BookController::class,'store'])->middleware(['auth', 'verified'])->name('book.store');
+Route::get('/book/{book}/edit', [BookController::class,'edit'])->middleware(['auth', 'verified'])->name('book.edit');
+Route::put('/book/{book}/update', [BookController::class,'update'])->middleware(['auth', 'verified'])->name('book.update');
 
 // Route::get('/subscriber', function () {
 //     return view('subscriber');
@@ -43,6 +45,8 @@ Route::post('/book', [BookController::class,'store'])->middleware(['auth', 'veri
 Route::get('/subscriber', [SubscriberController::class,'index'])->middleware(['auth', 'verified'])->name('subscriber');
 Route::get('/subscriber/create', [SubscriberController::class,'create'])->middleware(['auth', 'verified'])->name('subscriber.create');
 Route::post('/subscriber', [SubscriberController::class,'store'])->middleware(['auth', 'verified'])->name('subscriber.store');
+Route::get('/subscriber/{subscriber}/edit', [SubscriberController::class,'edit'])->middleware(['auth', 'verified'])->name('subscriber.edit');
+Route::put('/subscriber/{subscriber}/update', [SubscriberController::class,'update'])->middleware(['auth', 'verified'])->name('subscriber.update');
 
 Route::get('/inventory', function () {
     return view('inventory');

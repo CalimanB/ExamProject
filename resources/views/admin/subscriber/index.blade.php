@@ -11,6 +11,25 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     Welcome, {{ Auth::user()->name }} !<br>
                     <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if...INDEX SUBSCRIBER... you want to View, Edit, Add and Delete library subscribers.</p>
+                    <div>
+                    <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Subscriber Name</th>
+                        <th>Email Address</th>
+                        <th>Phone Number</th>
+                        <th>Edit</th>
+                    </tr>
+                    @foreach($subscribers as $subscriber)
+                        <tr>
+                            <td>{{$subscriber ->id}}</td>
+                            <td>{{$subscriber ->subscriber_name}}</td>
+                            <td>{{$subscriber ->email_address}}</td>
+                            <td>{{$subscriber ->phone_number}}</td>
+                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}">Edit</a></td>
+                        </tr>
+                    @endforeach
+                    </table>
                 </div>
             </div>
         </div>
