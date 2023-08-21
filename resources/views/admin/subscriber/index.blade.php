@@ -12,13 +12,24 @@
                     Welcome, {{ Auth::user()->name }} !<br>
                     <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if...INDEX SUBSCRIBER... you want to View, Edit, Add and Delete library subscribers.</p>
                     <div>
-                    <table border="1">
+                    @if (session()->has('success'))
+                        <div>
+                            {{session('success')}}
+                        </div>
+                    @endif
+                </div>
+                <div>
+                    <a href="{{route('subscriber.create')}}">Add a new subscriber</a>
+                </div>
+                    <div>
+                    <table class="table-auto">
                     <tr>
                         <th>ID</th>
                         <th>Subscriber Name</th>
                         <th>Email Address</th>
                         <th>Phone Number</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     @foreach($subscribers as $subscriber)
                         <tr>
@@ -27,6 +38,13 @@
                             <td>{{$subscriber ->email_address}}</td>
                             <td>{{$subscriber ->phone_number}}</td>
                             <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}">Edit</a></td>
+                            <td>
+                            <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
                         </tr>
                     @endforeach
                     </table>

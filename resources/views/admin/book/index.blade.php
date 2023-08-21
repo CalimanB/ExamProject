@@ -18,6 +18,9 @@
                         </div>
                     @endif
                 </div>
+                <div>
+                    <a href="{{route('book.create')}}">Add a book</a>
+                </div>
                     <div>
                     <table border="1">
                     <tr>
@@ -27,6 +30,7 @@
                         <th>Number of pages</th>
                         <th>Year published</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     @foreach($books as $book)
                         <tr>
@@ -36,6 +40,13 @@
                             <td>{{$book ->page_num}}</td>
                             <td>{{$book ->year_published}}</td>
                             <td><a href="{{route('book.edit', ['book'=>$book])}}">Edit</a></td>
+                            <td>
+                            <form method="post" action="{{route('book.destroy', ['book'=>$book])}}">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
                         </tr>
                     @endforeach
                     </table>

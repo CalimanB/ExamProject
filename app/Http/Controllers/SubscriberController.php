@@ -43,4 +43,9 @@ public function update(Subscriber $subscriber, Request $request){
 
     return redirect(route('subscriber'))->with('success', 'Subscriber updated successfully');
 }
+
+public function destroy(Subscriber $subscriber){
+    $subscriber->delete();
+    return redirect(route('subscriber'))->with('success', 'Subscriber deleted successfully');
+}
 }
