@@ -10,7 +10,30 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     Welcome, {{ Auth::user()->name }} !<br>
-                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to View, Edit and Delete user accounts.</p>
+                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to View and Delete user accounts.</p>
+                
+                <p>All current employees using the platform are listed below:</p>
+                <div>
+                    @if (session()->has('success'))
+                        <div>
+                            {{session('success')}}
+                        </div>
+                    @endif
+                </div>
+                <div>
+                    <a href="{{route('book.create')}}">Add a book</a>
+                </div>
+                    <div>
+                    <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Number of pages</th>
+                        <th>Year published</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
                 </div>
             </div>
         </div>
