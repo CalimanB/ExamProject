@@ -104,7 +104,7 @@
 
                     <div class="ml-4 text-center text-m text-gray-600 dark:text-gray-400 sm:text-right sm:ml-0 font-bold">
                         <!-- Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) -->
-                        &copy Caliman Bogdan
+                        Caliman Bogdan
                     </div>
                 </div>
             </div>
