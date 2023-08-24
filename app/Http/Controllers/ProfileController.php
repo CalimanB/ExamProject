@@ -67,4 +67,14 @@ class ProfileController extends Controller
     public function edits(User $user){
         return view('admin.user.edits', ['user' => $user]);
     }
+
+    public function updates(User $user, Request $request){
+        $data = $request-> validate([
+        'name' =>'required',
+        'email' => 'required',
+        ]);
+        $user->update($data);
+
+        return redirect(route('dashboard'))->with('success', 'User Updated Successfully');
+    }
 }
