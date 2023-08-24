@@ -25,13 +25,10 @@ Route::get('/test', function () {
     return view('test');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/dashboard', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard/{user}/edits', [ProfileController::class, 'edits'])->middleware(['auth', 'verified'])->name('user.edits');
-Route::put('/dashboard/{user}/updates', [ProfileController::class, 'updates'])->middleware(['auth', 'verified'])->name('user.updates');
+// Route::put('/dashboard/{user}/update', [ProfileController::class, 'update'])->middleware(['auth', 'verified'])->name('user.update');
+Route::delete('/dashboard/{user}/destro', [ProfileController::class,'destro'])->middleware(['auth', 'verified'])->name('user.destro');
 
 Route::get('/book', [BookController::class,'index'])->middleware(['auth', 'verified'])->name('book');
 Route::get('/book/create', [BookController::class,'create'])->middleware(['auth', 'verified'])->name('book.create');

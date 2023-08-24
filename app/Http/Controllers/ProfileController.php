@@ -64,17 +64,25 @@ class ProfileController extends Controller
         return view('dashboard', ['users' => $users]);
     }
 
-    public function edits(User $user){
-        return view('admin.user.edits', ['user' => $user]);
-    }
+    // public function edits(User $user){
+    //     // dd($user);
+    //     return view('admin.user.edits', ['user' => $user]);
 
-    public function updates(User $user, Request $request){
-        $data = $request-> validate([
-        'name' =>'required',
-        'email' => 'required',
-        ]);
-        $user->update($data);
+    // }
 
-        return redirect(route('dashboard'))->with('success', 'User Updated Successfully');
-    }
+    // public function updates(User $user, Request $request){
+    //     $data = $request -> validate([
+    //     'name' =>'required',
+    //     'email' => 'required',
+    //     ]);
+
+    //     $user->updates($data);
+
+    //     return redirect(route('dashboard'))->with('success', 'User Updated Successfully');
+    // }
+
+    public function destro(User $user){
+        $user->delete();
+        return redirect(route('dashboard'))->with('success', 'User deleted successfully');
+}
 }
