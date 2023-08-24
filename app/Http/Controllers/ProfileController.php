@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -56,5 +57,24 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function index(){  
+        $users = User::all();
+        return view('dashboard', ['users' => $users]);
+    }
+
+    public function edits(User $user){
+        return view('admin.user.edits', ['user' => $user]);
+    }
+
+    public function updates(User $user, Request $request){
+        $data = $request-> validate([
+        'name' =>'required',
+        'email' => 'required',
+        ]);
+        $user->update($data);
+
+        return redirect(route('dashboard'))->with('success', 'User Updated Successfully');
     }
 }

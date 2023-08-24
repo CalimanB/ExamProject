@@ -20,20 +20,33 @@
                         </div>
                     @endif
                 </div>
-                <div>
+                <!-- <div>
                     <a href="{{route('book.create')}}">Add a book</a>
-                </div>
-                    <div>
+                </div> -->
+                <div>
                     <table border="1">
-                    <tr>
-                        <th>ID</th>
-                        <th>Author</th>
-                        <th>Title</th>
-                        <th>Number of pages</th>
-                        <th>Year published</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Created at</th>
+                            <th>Updated at</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        @foreach($users as $user)
+                        <tr>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->created_at}}</td>
+                            <td>{{$user->updated_at}}</td>
+                            <td>
+                                <a href="{{route('user.edits', ['user' => $user])}}">Edit</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>    
                 </div>
             </div>
         </div>
