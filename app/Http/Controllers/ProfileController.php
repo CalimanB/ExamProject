@@ -63,4 +63,8 @@ class ProfileController extends Controller
         $users = User::all();
         return view('dashboard', ['users' => $users]);
     }
+
+    public function edits(User $user){
+        return view('admin.user.edits', ['user' => $user]);
+    }
 }

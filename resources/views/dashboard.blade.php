@@ -26,6 +26,7 @@
                 <div>
                     <table border="1">
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Created at</th>
@@ -35,10 +36,14 @@
                         </tr>
                         @foreach($users as $user)
                         <tr>
+                            <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at}}</td>
                             <td>{{$user->updated_at}}</td>
+                            <td>
+                                <a href="{{route('user.edits', ['user' => $user])}}">Edit</a>
+                            </td>
                         </tr>
                         @endforeach
                     </table>    

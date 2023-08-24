@@ -30,6 +30,7 @@ Route::get('/test', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/{user}/edits', [ProfileController::class, 'edits'])->middleware(['auth', 'verified'])->name('user.edits');
 
 Route::get('/book', [BookController::class,'index'])->middleware(['auth', 'verified'])->name('book');
 Route::get('/book/create', [BookController::class,'create'])->middleware(['auth', 'verified'])->name('book.create');
