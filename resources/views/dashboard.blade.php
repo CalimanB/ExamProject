@@ -20,9 +20,6 @@
                         </div>
                     @endif
                 </div>
-                <!-- <div>
-                    <a href="{{route('book.create')}}">Add a book</a>
-                </div> -->
                 <div>
                     <table border="1">
                         <tr>
@@ -31,7 +28,6 @@
                             <th>Email</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         @foreach($users as $user)
@@ -41,9 +37,13 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at}}</td>
                             <td>{{$user->updated_at}}</td>
+                            <form method="post" action="{{route('user.destro', ['user'=> $user])}}">
+                                @csrf
+                                @method('delete')
                             <td>
-                                <a href="{{route('user.edits', ['user' => $user])}}">Edit</a>
+                                <input type="submit" value="Delete"/>
                             </td>
+                            </form>
                         </tr>
                         @endforeach
                     </table>    

@@ -12,7 +12,7 @@
                     Welcome, {{ Auth::user()->name }} !<br>
                     <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to EDIT platform users.</p>
                     <h1>Edit user data</h1>
-                    <form method="post" action="{{route('user.updates', ['user' => $user])}}">
+                    <form method="post" action="{{route('user.update', ['user' => $user])}}">
                         @csrf
                         @method ('put')
                         <div>
