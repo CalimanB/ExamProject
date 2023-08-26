@@ -19,7 +19,7 @@
                     @endif
                 </div>
                 <div>
-                    <a href="{{route('subscriber.create')}}">Add a new subscriber</a>
+                    <a href="{{route('subscriber.create')}}"><i class="fa-solid fa-plus"> Add a new subscriber</i></a>
                 </div>
                     <div>
                     <table>
@@ -28,6 +28,8 @@
                         <th>Subscriber Name</th>
                         <th>Email Address</th>
                         <th>Phone Number</th>
+                        <th>Created at</th>
+                        <th>Updated at</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -37,13 +39,15 @@
                             <td>{{$subscriber ->subscriber_name}}</td>
                             <td>{{$subscriber ->email_address}}</td>
                             <td>{{$subscriber ->phone_number}}</td>
-                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}">Edit <i class="fa fa-edit"></a></td>
+                            <td>{{$subscriber->created_at}}</td>
+                            <td>{{$subscriber->updated_at}}</td>
+                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}"><i class="fa fa-edit"> Edit</i></a></td>
                             <td>
                             <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')">
-                                Delete <i class="fa-solid fa-trash"></i>
+                                <i class="fa-solid fa-trash"> Delete</i>
                                 </button>
                                 <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>
