@@ -43,7 +43,7 @@
                             <form method="post" action="{{route('inventory.destroy', ['inventory'=>$inventory])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this inventory item?')">
                                 <i class="fa-solid fa-trash"> Delete</i>
                                 </button>
                                 <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->

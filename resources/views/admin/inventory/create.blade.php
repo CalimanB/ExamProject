@@ -17,7 +17,7 @@
                         @method ('post')
                         <div>
                             <label>Author</label>
-                            <input type="text" name="author" placeholder="Author" class="text-purple-700 text-opacity-100">
+                            <input type="text" name="author" placeholder="Author" class="text-yellow-400 text-opacity-100">
                         </div>
                         <div>
                             <label>Book Title</label>
