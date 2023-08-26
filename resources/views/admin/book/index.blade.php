@@ -19,37 +19,39 @@
                     @endif
                 </div>
                 <div>
-                    <a href="{{route('book.create')}}"><i class="fa-solid fa-plus"> Add a book</i></a>
+                    <a href="{{route('book.create')}}" class="text-decoration-line: underline hover:font-bold"><i class="fa-solid fa-plus"></i>Add a book</a>
                 </div>
-                    <div>
-                    <table border="1">
+                    <div class="overflow-auto rounded-lg shadow-lg">
+                    <table class="w-full">
+                    <thead class="bg-indigo-300 border-b-2 border-white">
                     <tr>
-                        <th>ID</th>
-                        <th>Author</th>
-                        <th>Title</th>
-                        <th>Number of pages</th>
-                        <th>Year published</th>
-                        <th>Created at</th>
-                        <th>Updated at</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Author</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Number of pages</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Year published</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Edit</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
                     </tr>
+                    </thead>
                     @foreach($books as $book)
-                        <tr>
-                            <td>{{$book ->id}}</td>
-                            <td>{{$book ->author}}</td>
-                            <td>{{$book ->title}}</td>
-                            <td>{{$book ->page_num}}</td>
-                            <td>{{$book ->year_published}}</td>
-                            <td>{{$book->created_at}}</td>
-                            <td>{{$book->updated_at}}</td>
-                            <td><a href="{{route('book.edit', ['book'=>$book])}}"><i class="fa fa-edit"> Edit</i></a></td>
-                            <td>
+                        <tr class="even:bg-indigo-100 odd:bg-indigo-50 hover:bg-indigo-200">
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->author}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->id}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->title}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->page_num}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->year_published}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book->created_at}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book->updated_at}}</td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('book.edit', ['book'=>$book])}}" class="hover:underline"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('book.destroy', ['book'=>$book])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')">
-                                <i class="fa-solid fa-trash"> Delete</i>
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')" class="hover:underline">
+                                <i class="fa-solid fa-trash"></i> Delete 
                                 </button>
                                 <!-- <input type="submit" value='Delete' class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>

@@ -19,35 +19,37 @@
                     @endif
                 </div>
                 <div>
-                    <a href="{{route('subscriber.create')}}"><i class="fa-solid fa-plus"> Add a new subscriber</i></a>
+                    <a href="{{route('subscriber.create')}}" class="text-decoration-line: underline hover:font-bold"><i class="fa-solid fa-plus"></i> Add a new subscriber</a>
                 </div>
-                    <div>
-                    <table>
+                    <div class="overflow-auto rounded-lg shadow-lg">
+                    <table class="w-full">
+                    <thead class="bg-indigo-300 border-b-2 border-white">
                     <tr>
-                        <th>ID</th>
-                        <th>Subscriber Name</th>
-                        <th>Email Address</th>
-                        <th>Phone Number</th>
-                        <th>Created at</th>
-                        <th>Updated at</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Subscriber Name</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Email Address</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Phone Number</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Edit</th>
+                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
                     </tr>
+                    </thead>
                     @foreach($subscribers as $subscriber)
-                        <tr>
-                            <td>{{$subscriber ->id}}</td>
-                            <td>{{$subscriber ->subscriber_name}}</td>
-                            <td>{{$subscriber ->email_address}}</td>
-                            <td>{{$subscriber ->phone_number}}</td>
-                            <td>{{$subscriber->created_at}}</td>
-                            <td>{{$subscriber->updated_at}}</td>
-                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}"><i class="fa fa-edit"> Edit</i></a></td>
-                            <td>
+                        <tr class="even:bg-indigo-100 odd:bg-indigo-50 hover:bg-indigo-200">
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber ->id}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber ->subscriber_name}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber ->email_address}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber ->phone_number}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber->created_at}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$subscriber->updated_at}}</td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}"  class="hover:underline"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this subscriber?')">
-                                <i class="fa-solid fa-trash"> Delete</i>
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this subscriber?')"class="hover:underline">
+                                <i class="fa-solid fa-trash"></i> Delete
                                 </button>
                                 <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>

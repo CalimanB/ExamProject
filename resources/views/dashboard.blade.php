@@ -20,31 +20,32 @@
                         </div>
                     @endif
                 </div>
-                <div>
-                    <table border="1">
+                <div class="overflow-auto rounded-lg shadow-lg">
+                    <table class="w-full">
+                        <thead class="bg-indigo-300 border-b-2 border-white">
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Created at</th>
-                            <th>Updated at</th>
-                            <th>Delete</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Name</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Email</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
+                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
                         </tr>
+                        </thead>
                         @foreach($users as $user)
-                        <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->created_at}}</td>
-                            <td>{{$user->updated_at}}</td>
-                            <form method="post" action="{{route('user.destro', ['user'=> $user])}}">
+                        <tr class="even:bg-indigo-100 odd:bg-indigo-50 hover:bg-indigo-200">
+                            <td class="p-3 text-sm text-indigo-900">{{$user->id}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$user->name}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$user->email}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$user->created_at}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$user->updated_at}}</td>
+                            <form method="post" action="{{route('user.destro', ['user'=> $user])}}" class="hover:underline">
                                 @csrf
                                 @method('delete')
                             <td>
-                            <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')">
-                                <i class="fa-solid fa-trash">Delete </i>
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')"class="hover:underline">
+                                <i class="fa-solid fa-trash"></i> Delete
                                 </button>
-                                <!-- <input type="submit" value="Delete"/> -->
                             </td>
                             </form>
                         </tr>
