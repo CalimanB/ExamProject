@@ -34,12 +34,15 @@
                             <td>{{$inventory ->id}}</td>
                             <td>{{$inventory ->author}}</td>
                             <td>{{$inventory ->title}}</td>
-                            <td><a href="{{route('inventory.edit', ['inventory'=>$inventory])}}">Edit</a></td>
+                            <td><a href="{{route('inventory.edit', ['inventory'=>$inventory])}}">Edit <i class="fa fa-edit"></a></td>
                             <td>
                             <form method="post" action="{{route('inventory.destroy', ['inventory'=>$inventory])}}">
                                 @csrf
                                 @method('delete')
-                                <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')">
+                                Delete <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>
                         </td>
                         </tr>

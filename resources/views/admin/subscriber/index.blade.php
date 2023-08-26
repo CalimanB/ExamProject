@@ -37,12 +37,15 @@
                             <td>{{$subscriber ->subscriber_name}}</td>
                             <td>{{$subscriber ->email_address}}</td>
                             <td>{{$subscriber ->phone_number}}</td>
-                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}">Edit</a></td>
+                            <td><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}">Edit <i class="fa fa-edit"></a></td>
                             <td>
                             <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
                                 @csrf
                                 @method('delete')
-                                <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')">
+                                Delete <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>
                         </td>
                         </tr>

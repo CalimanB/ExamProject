@@ -41,7 +41,10 @@
                                 @csrf
                                 @method('delete')
                             <td>
-                                <input type="submit" value="Delete"/>
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')">
+                                Delete <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <!-- <input type="submit" value="Delete"/> -->
                             </td>
                             </form>
                         </tr>
