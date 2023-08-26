@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Welcome, {{ Auth::user()->name }} !<br>
-                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if... you want to View and Delete user accounts.</p>
+                    <p class="font-weight:900 m-4 text-3xl text-indigo-900">Welcome, <span class="font-bold italic">{{ Auth::user()->name }}!</span></p>
+                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View and Delete user accounts.</p>
                 
-                <p>All current employees using the platform are listed below:</p>
+                <p class="ml-3 -mt-2">All current employees using the platform are listed below:</p>
                 <div>
                     @if (session()->has('success'))
                         <div>
@@ -20,16 +20,16 @@
                         </div>
                     @endif
                 </div>
-                <div class="overflow-auto rounded-lg shadow-lg">
+                <div class="overflow-auto rounded-lg shadow-lg m-3">
                     <table class="w-full">
-                        <thead class="bg-indigo-300 border-b-2 border-white">
+                        <thead class="bg-indigo-300 border-b-2 border-white  text-indigo-900">
                         <tr>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Name</th>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Email</th>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
-                            <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">ID</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">Name</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">Email</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">Created at</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">Updated at</th>
+                            <th class="p-3 text-base font-semibold tracking-wide text-left">Delete</th>
                         </tr>
                         </thead>
                         @foreach($users as $user)
@@ -39,11 +39,11 @@
                             <td class="p-3 text-sm text-indigo-900">{{$user->email}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$user->created_at}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$user->updated_at}}</td>
-                            <form method="post" action="{{route('user.destro', ['user'=> $user])}}" class="hover:underline">
+                            <form method="post" action="{{route('user.destro', ['user'=> $user])}}">
                                 @csrf
                                 @method('delete')
                             <td>
-                            <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')"class="hover:underline">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')"class="hover:underline p-3 text-sm text-indigo-900">
                                 <i class="fa-solid fa-trash"></i> Delete
                                 </button>
                             </td>

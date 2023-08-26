@@ -9,8 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Welcome, {{ Auth::user()->name }} !<br>
-                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if...INDEX BOOK... you want to View, Edit, Add and Delete books from inventory.</p>
+                    <p class="font-weight:900 m-4 text-3xl text-indigo-900">Welcome, <span class="font-bold italic">{{ Auth::user()->name }}!</span></p>
+                    
+                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if...INDEX BOOK... you want to View, Edit, Add and Delete books from inventory.</p>
                 <div>
                     @if (session()->has('success'))
                         <div>
@@ -19,21 +20,21 @@
                     @endif
                 </div>
                 <div>
-                    <a href="{{route('book.create')}}" class="text-decoration-line: underline hover:font-bold"><i class="fa-solid fa-plus"></i>Add a book</a>
+                    <a href="{{route('book.create')}}" class="text-decoration-line: underline hover:font-bold m-3"><i class="fa-solid fa-plus"></i>Add a book</a>
                 </div>
-                    <div class="overflow-auto rounded-lg shadow-lg">
+                    <div class="overflow-auto rounded-lg shadow-lg m-3">
                     <table class="w-full">
-                    <thead class="bg-indigo-300 border-b-2 border-white">
+                    <thead class="bg-indigo-300 border-b-2 border-white text-indigo-900">
                     <tr>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Author</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Number of pages</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Year published</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Edit</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">ID</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Author</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Title</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Number of pages</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Year published</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Created at</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Updated at</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Edit</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Delete</th>
                     </tr>
                     </thead>
                     @foreach($books as $book)
@@ -45,15 +46,14 @@
                             <td class="p-3 text-sm text-indigo-900">{{$book ->year_published}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book->created_at}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book->updated_at}}</td>
-                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('book.edit', ['book'=>$book])}}" class="hover:underline"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('book.edit', ['book'=>$book])}}" class="hover:underline text-sm text-indigo-900"><i class="fa fa-edit"></i> Edit</a></td>
                             <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('book.destroy', ['book'=>$book])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')" class="hover:underline">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')" class="hover:underline text-sm text-indigo-900">
                                 <i class="fa-solid fa-trash"></i> Delete 
                                 </button>
-                                <!-- <input type="submit" value='Delete' class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->
                             </form>
                         </td>
                         </tr>
