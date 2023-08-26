@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Welcome, {{ Auth::user()->name }} !<br>
-                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800">You are in the  right place if...INDEX INVENTORY... you want to View, Edit, Add and Delete books from inventory.</p>
+                    <p class="font-weight:900 m-4 text-3xl text-indigo-900">Welcome, <span class="font-bold italic">{{ Auth::user()->name }}!</span></p>
+                    <p class="font-medium text-xl text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View, Edit, Add and Delete books from inventory.</p>
                     <div>
                     @if (session()->has('success'))
                         <div>
@@ -19,19 +19,19 @@
                     @endif
                 </div>
                 <div>
-                    <a href="{{route('inventory.create')}}" class="text-decoration-line: underline hover:font-bold"><i class="fa-solid fa-plus"></i> Add new inventory item</a>
+                    <a href="{{route('inventory.create')}}" class="text-decoration-line: underline hover:font-bold m-3"><i class="fa-solid fa-plus"></i> Add new inventory item</a>
                 </div>
-                <div class="overflow-auto rounded-lg shadow-lg">
+                <div class="overflow-auto rounded-lg shadow-lg m-3">
                 <table class="w-full">
-                    <thead class="bg-indigo-300 border-b-2 border-white">
+                    <thead class="bg-indigo-300 border-b-2 border-white text-indigo-900">
                     <tr>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">ID</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Author</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Created at</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Updated at</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Edit</th>
-                        <th class="p-3 text-sm font-semibold tracking-wide text-left">Delete</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">ID</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Author</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Title</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Created at</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Updated at</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Edit</th>
+                        <th class="p-3 text-base font-semibold tracking-wide text-left">Delete</th>
                     </tr>
                     </thead>
                     @foreach($inventories as $inventory)

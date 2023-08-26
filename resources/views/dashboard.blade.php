@@ -10,9 +10,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <p class="font-weight:900 m-4 text-3xl text-indigo-900">Welcome, <span class="font-bold italic">{{ Auth::user()->name }}!</span></p>
-                    <p class="font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View and Delete user accounts.</p>
+                    <p class="font-medium text-xl text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View and Delete user accounts.</p>
                 
-                <p class="ml-3 -mt-2">All current employees using the platform are listed below:</p>
+                <p class="m-3">All current employees using the platform are listed below:</p>
                 <div>
                     @if (session()->has('success'))
                         <div>
