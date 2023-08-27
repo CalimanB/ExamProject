@@ -10,8 +10,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <p class="font-weight:900 m-4 text-3xl text-indigo-900">Welcome, <span class="font-bold italic">{{ Auth::user()->name }}!</span></p>
-                    <p class="font-medium text-xl text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View, Edit, Add and Delete books from inventory.</p>
-                <div>
+                    <p class="font-medium text-xl text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View, Edit, Add and Delete books</p>
+                <div class="font-medium text-sm m-3 text-indigo-500">
                     @if (session()->has('success'))
                         <div>
                             {{session('success')}}
@@ -38,8 +38,8 @@
                     </thead>
                     @foreach($books as $book)
                         <tr class="even:bg-indigo-100 odd:bg-indigo-50 hover:bg-indigo-200">
-                            <td class="p-3 text-sm text-indigo-900">{{$book ->author}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book ->id}}</td>
+                            <td class="p-3 text-sm text-indigo-900">{{$book ->author}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book ->title}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book ->page_num}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book ->year_published}}</td>

@@ -13,7 +13,7 @@
                     <p class="font-medium text-xl text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 m-4">You are in the  right place if... you want to View and Delete user accounts.</p>
                 
                 <p class="m-3">All current employees using the platform are listed below:</p>
-                <div>
+                <div class="font-medium text-sm m-3 text-indigo-500">
                     @if (session()->has('success'))
                         <div>
                             {{session('success')}}
