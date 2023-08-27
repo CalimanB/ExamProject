@@ -40,7 +40,7 @@ class InventoryController extends Controller
 
         $inventory->update($data);
 
-        return redirect(route('inventory'))->with('success', 'Book inventory item updated successfully');
+        return redirect(route('inventory'))->with('success', 'Inventory item updated successfully');
     }
 
     public function destroy(Inventory $inventory){
