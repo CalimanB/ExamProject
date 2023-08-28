@@ -45,12 +45,12 @@
                             <td class="p-3 text-sm text-indigo-900">{{$book ->year_published}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book->created_at}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$book->updated_at}}</td>
-                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('book.edit', ['book'=>$book])}}" class="hover:underline text-sm text-indigo-900"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('book.edit', ['book'=>$book])}}" class="hover:underline text-sm text-indigo-900" title="edit"><i class="fa fa-edit"></i> Edit</a></td>
                             <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('book.destroy', ['book'=>$book])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')" class="hover:underline text-sm text-indigo-900">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this book?')" class="hover:underline text-sm text-indigo-900" title="delete">
                                 <i class="fa-solid fa-trash"></i> Delete 
                                 </button>
                             </form>

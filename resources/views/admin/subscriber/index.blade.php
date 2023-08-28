@@ -43,12 +43,12 @@
                             <td class="p-3 text-sm text-indigo-900">{{$subscriber ->phone_number}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$subscriber->created_at}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$subscriber->updated_at}}</td>
-                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}"  class="hover:underline"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('subscriber.edit', ['subscriber'=>$subscriber])}}"  class="hover:underline" title="edit"><i class="fa fa-edit"></i> Edit</a></td>
                             <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('subscriber.destroy', ['subscriber'=>$subscriber])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this subscriber?')"class="hover:underline">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this subscriber?')"class="hover:underline" title="delete">
                                 <i class="fa-solid fa-trash"></i> Delete
                                 </button>
                                 <!-- <input type="submit" value="Delete" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="return confirm('Are you sure you want to delete this item?')"> -->

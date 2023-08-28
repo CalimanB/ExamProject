@@ -41,12 +41,12 @@
                             <td class="p-3 text-sm text-indigo-900">{{$inventory ->title}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$inventory->created_at}}</td>
                             <td class="p-3 text-sm text-indigo-900">{{$inventory->updated_at}}</td>
-                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('inventory.edit', ['inventory'=>$inventory])}}" class="hover:underline"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td class="p-3 text-sm text-indigo-900"><a href="{{route('inventory.edit', ['inventory'=>$inventory])}}" class="hover:underline"><i class="fa fa-edit" title="edit"></i> Edit</a></td>
                             <td class="p-3 text-sm text-indigo-900">
                             <form method="post" action="{{route('inventory.destroy', ['inventory'=>$inventory])}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this inventory item?')" class="hover:underline">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this inventory item?')" class="hover:underline" title="delete">
                                 <i class="fa-solid fa-trash"></i> Delete
                                 </button>
                             </form>

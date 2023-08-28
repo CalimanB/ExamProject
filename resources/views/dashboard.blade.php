@@ -43,7 +43,7 @@
                                 @csrf
                                 @method('delete')
                             <td>
-                                <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')"class="hover:underline p-3 text-sm text-indigo-900">
+                                <button type="submit" title="delete" onclick="return confirm('Are you sure you want to delete this user?')"class="hover:underline p-3 text-sm text-indigo-900">
                                 <i class="fa-solid fa-trash"></i> Delete
                                 </button>
                             </td>
